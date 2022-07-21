@@ -7,13 +7,10 @@ const app = express();
 app.use(express.json());
 const connectDB = async () => {
   try {
-    await mongoose.connect(
-      "mongodb+srv://compactpay:12345@compactpay.ldydh.mongodb.net/lannisterpay?retryWrites=true&w=majority",
-      {
-        useUnifiedTopology: true,
-        useNewUrlParser: true,
-      }
-    );
+    await mongoose.connect( process.env.MONGO_URI, {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+    });
     console.log("Connect Database");
   } catch (error) {
     console.log(error);

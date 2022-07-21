@@ -27,12 +27,13 @@ const lannisterSchema = new Schema(
         },
         splitAmount: {
           type: Number,
-          // required: true,
+          required: true,
         },
         splitEntityId: {
           type: String,
           required: true,
         },
+        _id: false,
       },
     ],
     balance: {
